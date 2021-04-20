@@ -14,6 +14,24 @@
   header {
     display: flex;
     align-items: center;
-    gap: 16px;
+    gap: 1rem;
   }
+
+  strong {
+    font-family: Lexend, sans-serif;
+    font-weight: 600;
+  }
+}
+
+.emptyPlayer {
+  width: 100%;
+  height: 20rem;
+  border: 1.5px dashed var(--purple-300);
+  border-radius: 1.5rem;
+  // linha copiada do figma. =D
+  background: linear-gradient(143.8deg, rgba(145,100, 250, 0.8) 0%, rgba(0, 0, 0, 0) 100%);
+
+  padding: 4rem;
+  text-align: center;
+  justify-content: center;
 }
