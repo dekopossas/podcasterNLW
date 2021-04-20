@@ -1,6 +1,6 @@
 import styles from './styles.module.scss';
 
-export function Header() {
+export function Player() {
   return (
    <div>
      player
