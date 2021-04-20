@@ -7,8 +7,10 @@ import styles from '../styles/app.module.scss';
 function MyApp({ Component, pageProps }) {
   return (
     <div className={styles.wrapper}>
-      <Header />
-      <Component {...pageProps} />
+      <main>
+        <Header />
+        <Component {...pageProps} />
+      </main>
     </div>
   )
 }
