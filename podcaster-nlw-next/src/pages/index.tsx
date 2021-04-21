@@ -1,4 +1,6 @@
 import { GetStaticProps } from 'next';
+import { format, parseISO } from 'date-fns'
+import ptBR from 'date-fns/locale/pt-BR';
 import { api } from '../services/api';
 
 type Episode = {
@@ -36,7 +38,7 @@ export const getStaticProps: GetStaticProps = async () => {
       title: episodes.title,
       thumbnail: episodes.thumbnail,
       members: episodes.members,
-      publishedAt: episodes.published_at
+      publishedAt: format(parseISO(episodes.published_at), 'd MMM yy', { locale: ptBR })
     };
   });
 
