@@ -30,7 +30,7 @@ export function Player() {
           <img src="/play-previous.svg" alt="Tocar anterior" />
         </button>
 
-        <button type="button">
+        <button type="button" className={styles.playButton}>
           <img src="/play.svg" alt="Tocar" />
         </button>
 
