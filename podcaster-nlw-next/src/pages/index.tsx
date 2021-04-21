@@ -5,6 +5,7 @@ type Episode = {
   id: string;
   title: string;
   members: string;
+  published_at: string;
 };
 
 type HomeProps = {
@@ -15,7 +16,7 @@ export default function Home(props: HomeProps) {
   return (
     <div>
       <h1>Index</h1>
-      <p>{JSON.stringify(props.episodes)}</p>
+      <p>{}</p>
     </div>
   )
 };
@@ -28,6 +29,16 @@ export const getStaticProps: GetStaticProps = async () => {
       _order: 'desc',
     }
   })
+
+  const episodes = data.map(episodes => {
+    return {
+      id: episodes.id,
+      title: episodes.title,
+      thumbnail: episodes.thumbnail,
+      members: episodes.members,
+      publishedAt: episodes.published_at
+    };
+  });
 
   return {
     props: {
