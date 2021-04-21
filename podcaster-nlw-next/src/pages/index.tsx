@@ -12,7 +12,7 @@ type Episode = {
   thumbnail: string,
   members: string,
   publishedAt: string,
-  duration: string,
+  duration: number,
   durationAsString: string,
   description: string,
   url: string,
@@ -29,10 +29,10 @@ export default function Home({ latesEpisodes, allEpisodes }: HomeProps) {
       <section className={styles.latesEpisodes}>
         <h2>Últimos Lançamentos</h2>
         <ul>
-          {latesEpisodes.map((episodes) => {
+          {latesEpisodes.map((episode) => {
             return (
               <li>
-                <a href="">{episodes.title}</a>
+                <a href="">{episode.title}</a>
               </li>
             )
           })}
@@ -75,7 +75,8 @@ export const getStaticProps: GetStaticProps = async () => {
 
   return {
     props: {
-      episodes,
+      latesEpisodes,
+      allEpisodes,
     },
     revalidate: 60 * 60 * 8,
   }
