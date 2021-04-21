@@ -33,7 +33,7 @@
       border-radius: 1rem;
     }
 
-    .episodesDetails {
+    .episodeDetails {
       flex: 1;
       margin-left: 1rem;
 
@@ -63,6 +63,23 @@
         display: inline-block;
         margin-top: 0.5rem;
         font-size: 0.875rem;
+
+        &:last-child {
+          margin-left: 0.5rem;
+          padding-left: 0.5rem;
+          position: relative;
+
+          &::before {
+            content: "";
+            width: 4px;
+            height: 4px;
+            border-radius: 2px;
+            background: #DDD;
+            position: absolute;
+            left: 0;
+            top: 50%;
+          }
+        }
       }
     }
   }
