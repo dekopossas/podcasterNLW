@@ -56,10 +56,15 @@
     text-align: center;
   }
 
-  .emptySlider {
-    width: 100%;
-    height: 4px;
-    background: var(--purple-300);
-    border-radius: 2px;
-  }
+  .slider {
+    flex: 1;
+    
+    .emptySlider {
+      width: 100%;
+      height: 4px;
+      background: var(--purple-300);
+      border-radius: 2px;
+    }
+  } 
+
 }
