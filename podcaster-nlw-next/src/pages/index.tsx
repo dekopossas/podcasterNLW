@@ -4,6 +4,8 @@ import ptBR from 'date-fns/locale/pt-BR';
 import { api } from '../services/api';
 import { convertDurationToTimeString } from '../utils/convertDurationToTimeString';
 
+import styles from './home.module.scss';
+
 type Episode = {
   id: string,
   title: string,
@@ -17,14 +19,24 @@ type Episode = {
 };
 
 type HomeProps = {
-  episodes: Episode[];
+  latesEpisodes: Episode[];
+  allEpisodes: Episode[];
 };
 
-export default function Home(props: HomeProps) {
+export default function Home({ episodes }: HomeProps) {
   return (
-    <div>
-      <h1>Index</h1>
-      <p>{JSON.stringify(props.episodes)}</p>
+    <div className={styles.homepage}>
+      <section className={styles.latesEpisodes}>
+        <h2>Últimos Lançamentos</h2>
+        <ul>
+
+        </ul>
+
+      </section>
+
+      <section className={styles.latesEpisodes}>
+        
+      </section>
     </div>
   )
 };
@@ -51,6 +63,9 @@ export const getStaticProps: GetStaticProps = async () => {
       url: episode.file.url,
     };
   });
+
+  const latesEpisodes = episodes.slice(0, 2);
+  const allEpisodes = episodes.slice(2, episodes.length);
 
   return {
     props: {
