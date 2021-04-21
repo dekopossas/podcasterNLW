@@ -38,6 +38,7 @@ export default function Home({ latesEpisodes, allEpisodes }: HomeProps) {
                   height={192}
                   src={episode.thumbnail}
                   alt={episode.title}
+                  objectFit="contain"
                 />
 
                 <div className={styles.episodeDetails}>
