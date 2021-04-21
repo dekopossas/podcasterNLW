@@ -31,8 +31,18 @@ export default function Home({ latesEpisodes, allEpisodes }: HomeProps) {
         <ul>
           {latesEpisodes.map((episode) => {
             return (
-              <li>
-                <a href="">{episode.title}</a>
+              <li key={episode.id}>
+                <img src={episode.thumbnail} alt={episode.title} />
+
+                <div className={styles.episodeDetails}>
+                  <a href="">{episode.title}</a>
+                  <p>{episode.members}</p>
+                  <span>{episode.publishedAt}</span>
+                  <span>{episode.durationAsString}</span>
+                </div>
+                <button type="button">
+                  <img src="/play-green.svg" alt="tocar ep" />
+                </button>
               </li>
             )
           })}
