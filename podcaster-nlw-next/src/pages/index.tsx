@@ -5,10 +5,15 @@ import { api } from '../services/api';
 import { convertDurationToTimeString } from '../utils/convertDurationToTimeString';
 
 type Episode = {
-  id: string;
-  title: string;
-  members: string;
-  published_at: string;
+  id: string,
+  title: string,
+  thumbnail: string,
+  members: string,
+  publishedAt: string,
+  duration: string,
+  durationAsString: string,
+  description: string,
+  url: string,
 };
 
 type HomeProps = {
@@ -19,7 +24,7 @@ export default function Home(props: HomeProps) {
   return (
     <div>
       <h1>Index</h1>
-      <p>{}</p>
+      <p>{JSON.stringify(props.episodes)}</p>
     </div>
   )
 };
