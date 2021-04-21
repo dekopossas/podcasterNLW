@@ -21,6 +21,14 @@
     font-family: Lexend, sans-serif;
     font-weight: 600;
   }
+
+  footer {
+    align-self: stretch;
+
+    &.empty {
+      opacity: 0.5;
+    }
+  }
 }
 
 .emptyPlayer {
