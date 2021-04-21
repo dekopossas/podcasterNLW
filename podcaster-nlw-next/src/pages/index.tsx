@@ -32,13 +32,16 @@ export const getStaticProps: GetStaticProps = async () => {
     }
   })
 
-  const episodes = data.map(episodes => {
+  const episodes = data.map(episode => {
     return {
-      id: episodes.id,
-      title: episodes.title,
-      thumbnail: episodes.thumbnail,
-      members: episodes.members,
-      publishedAt: format(parseISO(episodes.published_at), 'd MMM yy', { locale: ptBR })
+      id: episode.id,
+      title: episode.title,
+      thumbnail: episode.thumbnail,
+      members: episode.members,
+      publishedAt: format(parseISO(episode.published_at), 'd MMM yy', { locale: ptBR }),
+      duration: Number(episode.file.duration),
+      description: episode.description,
+      url: episode.file.url,
     };
   });
 
