@@ -23,13 +23,19 @@ type HomeProps = {
   allEpisodes: Episode[];
 };
 
-export default function Home({ episodes }: HomeProps) {
+export default function Home({ latesEpisodes, allEpisodes }: HomeProps) {
   return (
     <div className={styles.homepage}>
       <section className={styles.latesEpisodes}>
         <h2>Últimos Lançamentos</h2>
         <ul>
-
+          {latesEpisodes.map((episodes) => {
+            return (
+              <li>
+                <a href="">{episodes.title}</a>
+              </li>
+            )
+          })}
         </ul>
 
       </section>
