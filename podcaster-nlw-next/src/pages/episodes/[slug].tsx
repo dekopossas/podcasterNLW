@@ -41,6 +41,13 @@ export default function Episode({ episode }: EpisodeProps ) {
           <img src="play.svg" alt="tocar ep" />
         </button>
       </div>
+
+      <header>
+        <h1>{episode.title}</h1>
+        <span>{episode.members}</span>
+        <span>{episode.publishedAt}</span>
+        <span>{episode.durationAsString}</span>
+      </header>
     </div>
   )
 
