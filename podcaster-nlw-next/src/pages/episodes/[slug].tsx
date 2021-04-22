@@ -1,6 +1,7 @@
+import { GetStaticProps, GetStaticPaths } from 'next';
+import Image from 'next/image'
 import { format, parseISO } from 'date-fns';
 import ptBR from 'date-fns/locale/pt-BR';
-import { GetStaticProps, GetStaticPaths } from 'next';
 import { convertDurationToTimeString } from '../../utils/convertDurationToTimeString';
 import { api } from '../../services/api'
 
@@ -25,9 +26,20 @@ type EpisodeProps = {
 
 export default function Episode({ episode }: EpisodeProps ) {
   return (
-    <div>
+    <div className={styles.episode}>
       <div className={styles.thumbnailCointainer}>
-
+        <button type="button">
+          <img src="/arrow-letf.svg" alt="Voltar" />
+        </button>
+        <Image
+          width={700}
+          height={160}
+          src={episode.thumbnail}
+          objectFit="cover"
+        />
+        <button type="button">
+          <img src="play.svg" alt="tocar ep" />
+        </button>
       </div>
     </div>
   )
