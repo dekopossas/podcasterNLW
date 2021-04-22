@@ -4,6 +4,9 @@ import { GetStaticProps, GetStaticPaths } from 'next';
 import { convertDurationToTimeString } from '../../utils/convertDurationToTimeString';
 import { api } from '../../services/api'
 
+import styles from './episode.module.scss';
+
+
 type Episode = {
   id: string;
   title: string;
@@ -22,7 +25,11 @@ type EpisodeProps = {
 
 export default function Episode({ episode }: EpisodeProps ) {
   return (
-    <h1>{episode.title}</h1>
+    <div>
+      <div className={styles.thumbnailCointainer}>
+
+      </div>
+    </div>
   )
 
 };
