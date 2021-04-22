@@ -145,6 +145,22 @@
           text-decoration: underline;
         }
       }
+      button {
+        width: 2rem;
+        height: 2rem;
+        background: var(--white);
+        border-radius: 0.5rem;
+        font-size: 0;
+  
+        img {
+          width: 1.25rem;
+          height: 1.25rem;
+        }
+  
+        &:hover {
+          filter: brightness(0.95);
+        }
+      }
     }
   }
 }
