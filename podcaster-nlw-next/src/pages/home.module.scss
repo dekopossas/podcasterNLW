@@ -123,5 +123,20 @@
       font: 500 0.75rem Lexend, sans-serif;
       text-align: left;
     }
+
+    td {
+      font-size: 0.875rem;
+
+      img {
+        height: 2.5rem;
+        width: 2.5rem;
+        border-radius: 0.5rem;
+      }
+
+      a {
+        color: var(--gray-800);
+        
+      }
+    }
   }
 }
