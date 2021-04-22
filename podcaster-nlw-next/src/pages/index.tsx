@@ -72,7 +72,6 @@ export default function Home({ latesEpisodes, allEpisodes }: HomeProps) {
                 <tr key={episode.id}>
                   <td>
                     <Image
-                      src="/"
                       width={120}
                       height={120}
                       src={episode.thumbnail}
