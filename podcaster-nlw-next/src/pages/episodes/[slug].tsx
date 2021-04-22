@@ -29,7 +29,7 @@ export default function Episode({ episode }: EpisodeProps ) {
     <div className={styles.episode}>
       <div className={styles.thumbnailCointainer}>
         <button type="button">
-          <img src="/arrow-letf.svg" alt="Voltar" />
+          <img src="/arrow-left.svg" alt="Voltar" />
         </button>
         <Image
           width={700}
@@ -38,7 +38,7 @@ export default function Episode({ episode }: EpisodeProps ) {
           objectFit="cover"
         />
         <button type="button">
-          <img src="play.svg" alt="tocar ep" />
+          <img src="/play.svg" alt="tocar ep" />
         </button>
       </div>
 
