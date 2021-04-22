@@ -60,10 +60,10 @@ export default function Episode({ episode }: EpisodeProps ) {
 
 export const getStaticPaths: GetStaticPaths = async () => {
   return {
-    path: [],
+    paths: [],
     fallback: 'blocking'
   }
-}
+};
 
 export const getStaticProps: GetStaticProps = async (ctx) => {
   const { slug } = ctx.params;
@@ -81,8 +81,7 @@ export const getStaticProps: GetStaticProps = async (ctx) => {
     description: data.description,
     url: data.file.url,
   };
-}
-
+  
   return {
     props: {
       episode,

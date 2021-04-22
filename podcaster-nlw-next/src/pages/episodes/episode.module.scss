@@ -21,9 +21,15 @@
 
       transition: filter 0.2s;
 
+      &:first-child {
+        letf: 0;
+        top:
+      }
+
       &:hover {
         filter: brightness(0.9)
       }
+
     }
   }
 }
