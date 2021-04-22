@@ -87,7 +87,7 @@ export default function Home({ latesEpisodes, allEpisodes }: HomeProps) {
                   <td>{episode.durationAsString}</td>
                   <td>
                     <button type="button">
-                      <img></img>
+                      <img src="/play-green.svg" alt="Tocar episodio"/>
                     </button>
                   </td>
                 </tr>
