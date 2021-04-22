@@ -55,8 +55,48 @@ export default function Home({ latesEpisodes, allEpisodes }: HomeProps) {
           })}
         </ul>
       </section>
-
-      <section className={styles.latesEpisodes}></section>
+      <section className={styles.allEpisodes}>
+        <h2>Todos os Episodes</h2>
+        <table cellSpacing={0}>
+          <thead>
+            <th></th>
+            <th>podcaster</th>
+            <th>Integrantes</th>
+            <th>Data</th>
+            <th>Duration</th>
+            <th></th>
+          </thead>
+          <tbody>
+            {allEpisodes.map(episode => {
+              return (
+                <tr key={episode.id}>
+                  <td>
+                    <Image
+                      src="/"
+                      width={120}
+                      height={120}
+                      src={episode.thumbnail}
+                      alt={episode.title}
+                      objectFit="cover"
+                    />
+                  </td>
+                  <td>
+                    <a href="">{episode.title}</a>
+                  </td>
+                  <td>{episode.members}</td>
+                  <td>{episode.publishedAt}</td>
+                  <td>{episode.durationAsString}</td>
+                  <td>
+                    <button type="button">
+                      <img></img>
+                    </button>
+                  </td>
+                </tr>
+              )
+            })}
+          </tbody>
+        </table>
+      </section>
     </div>
   );
 }
