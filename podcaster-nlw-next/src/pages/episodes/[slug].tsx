@@ -7,4 +7,4 @@ export default function Episode() {
     <h1>{router.query.slug}</h1>
   )
 
-}
+};
