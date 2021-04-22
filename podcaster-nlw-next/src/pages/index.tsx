@@ -62,12 +62,14 @@ export default function Home({ latesEpisodes, allEpisodes }: HomeProps) {
         <h2>Todos os Episodes</h2>
         <table cellSpacing={0}>
           <thead>
-            <th></th>
-            <th>podcaster</th>
-            <th>Integrantes</th>
-            <th>Data</th>
-            <th>Duration</th>
-            <th></th>
+            <tr>
+              <th></th>
+              <th>podcaster</th>
+              <th>Integrantes</th>
+              <th>Data</th>
+              <th>Duration</th>
+              <th></th>
+            </tr>
           </thead>
           <tbody>
             {allEpisodes.map(episode => {
