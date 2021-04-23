@@ -8,7 +8,7 @@ import styles from '../styles/app.module.scss';
 
 function MyApp({ Component, pageProps }) {
   return (
-    <PlayerContext.Provider values={'deko'}>
+    <PlayerContext.Provider value={'deko'}>
       <div className={styles.wrapper}>
         <main>
           <Header />
