@@ -4,13 +4,15 @@ import { PlayerContext } from '../../contexts/PlayerContext';
 import styles from './styles.module.scss';
 
 export function Player() {
-  const player = useContext(PlayerContext)
-  
+  const { episodeList, currentEpisodeIndex} = useContext(PlayerContext);
+
+  const episode = episodeList[currentEpisodeIndex];
+
   return (
    <div className={styles.playerComponent}>
      <header>
        <img src="/playing.svg" alt="logo do player" />
-       <strong>playing now {player}</strong>
+       <strong>playing now {episode?.title}</strong>
      </header>
 
     <div className={styles.emptyPlayer}>
