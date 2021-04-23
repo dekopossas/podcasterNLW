@@ -2,6 +2,7 @@ import { GetStaticProps, GetStaticPaths } from 'next';
 import Image from 'next/image'
 import { format, parseISO } from 'date-fns';
 import ptBR from 'date-fns/locale/pt-BR';
+import Link from 'next/link';
 import { convertDurationToTimeString } from '../../utils/convertDurationToTimeString';
 import { api } from '../../services/api'
 
@@ -28,9 +29,11 @@ export default function Episode({ episode }: EpisodeProps ) {
   return (
     <div className={styles.episode}>
       <div className={styles.thumbnailCointainer}>
-        <button type="button">
-          <img src="/arrow-left.svg" alt="Voltar" />
-        </button>
+        <Link href="/">
+          <button type="button">
+            <img src="/arrow-left.svg" alt="Voltar" />
+          </button>
+        </Link>
         <Image
           width={700}
           height={160}
