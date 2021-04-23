@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import { useContext } from 'react';
 import { PlayerContext } from '../../contexts/PlayerContext';
 
@@ -12,12 +13,24 @@ export function Player() {
    <div className={styles.playerComponent}>
      <header>
        <img src="/playing.svg" alt="logo do player" />
-       <strong>playing now {episode?.title}</strong>
+       <strong>playing now</strong>
      </header>
-
-    <div className={styles.emptyPlayer}>
-      <strong>Selecione um podcast para ouvir</strong>
-    </div>
+    { episode ? (
+      <div className={styles.currentEpisode}>
+        <Image
+          width={592}
+          height={592}
+          src={episode.thumbnail}
+          objectFit="cover"
+        />
+        <strong>{episode.title}</strong>
+        <span>{episode.members}</span>
+      </div>
+      ) : (
+      <div className={styles.emptyPlayer}>
+        <strong>Selecione um podcast para ouvir</strong>
+      </div>
+    ) }
 
     <footer className={styles.empty}>
       <div className={styles.progress}>
