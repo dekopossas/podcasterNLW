@@ -1,3 +1,3 @@
 import { createContext } from 'react';
 
-export const PlayerContext = createContext('deko');
+export const PlayerContext = createContext('');
