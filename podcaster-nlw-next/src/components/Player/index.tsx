@@ -12,15 +12,17 @@ export function Player() {
   const {
     episodeList,
     currentEpisodeIndex,
-    isPlaying,
-    togglePlay,
-    toggleLoop,
     setIsPlayingState,
     playNext,
     playPrev,
-    hasPrevious,
-    isLooping,
     hasNext,
+    hasPrevious,
+    isPlaying,
+    isLooping,
+    isShuffling,
+    togglePlay,
+    toggleLoop,
+    toggleShuffle,
   } = usePlayer();
 
   useEffect(() => {
@@ -88,7 +90,12 @@ export function Player() {
       )}
 
       <div className={styles.buttons}>
-        <button type="button" disabled={!episode}>
+        <button
+          type="button"
+          disabled={!episode || episodeList.length === 1}
+          onClick={toggleShuffle}
+          className={isShuffling ? styles.isActive : ''}
+        >
           <img src="/shuffle.svg" alt="Embaralhar" />
         </button>
 
