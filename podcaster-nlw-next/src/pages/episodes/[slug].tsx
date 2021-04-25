@@ -5,6 +5,7 @@ import ptBR from 'date-fns/locale/pt-BR';
 import Link from 'next/link';
 import { convertDurationToTimeString } from '../../utils/convertDurationToTimeString';
 import { api } from '../../services/api'
+import { usePlayer } from '../../contexts/PlayerContext';
 
 import styles from './episode.module.scss';
 
@@ -26,6 +27,8 @@ type EpisodeProps = {
 };
 
 export default function Episode({ episode }: EpisodeProps ) {
+  const { } = usePlayer();
+
   return (
     <div className={styles.episode}>
       <div className={styles.thumbnailCointainer}>
