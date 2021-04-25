@@ -118,7 +118,7 @@
       border-radius: 1rem;
       background: var(--purple-400);
 
-      &:houver {
+      &:houver(:disabled) {
         filter: brightness(0.95);
       }
     }
