@@ -15,6 +15,7 @@ export function Player() {
     currentEpisodeIndex,
     isPlaying,
     togglePlay,
+    setIsPlayingState,
   } = useContext(PlayerContext);
 
   useEffect(() => {
@@ -75,6 +76,8 @@ export function Player() {
           src={episode.url}
           ref={audioRef}
           autoPlay
+          onPlay={() => setIsPlayingState(true)}
+          onPause={() => setIsPlayingState(false)}
         />
       )}
 
