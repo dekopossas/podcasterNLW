@@ -1,14 +1,14 @@
 import { GetStaticProps, GetStaticPaths } from 'next';
-import Image from 'next/image'
+import Image from 'next/image';
+import Head from 'next/head';
 import { format, parseISO } from 'date-fns';
 import ptBR from 'date-fns/locale/pt-BR';
 import Link from 'next/link';
 import { convertDurationToTimeString } from '../../utils/convertDurationToTimeString';
-import { api } from '../../services/api'
+import { api } from '../../services/api';
 import { usePlayer } from '../../contexts/PlayerContext';
 
 import styles from './episode.module.scss';
-
 
 type Episode = {
   id: string;
@@ -26,23 +26,21 @@ type EpisodeProps = {
   episode: Episode;
 };
 
-export default function Episode({ episode }: EpisodeProps ) {
+export default function Episode({ episode }: EpisodeProps) {
   const { play } = usePlayer();
 
   return (
     <div className={styles.episode}>
+      <Head>
+        <title>PodCasts {episode.title}</title>
+      </Head>
       <div className={styles.thumbnailCointainer}>
         <Link href="/">
           <button type="button">
             <img src="/arrow-left.svg" alt="Voltar" />
           </button>
         </Link>
-        <Image
-          width={700}
-          height={160}
-          src={episode.thumbnail}
-          objectFit="cover"
-        />
+        <Image width={700} height={160} src={episode.thumbnail} objectFit="cover" />
         <button type="button" onClick={() => play(episode)}>
           <img src="/play.svg" alt="tocar ep" />
         </button>
@@ -57,24 +55,23 @@ export default function Episode({ episode }: EpisodeProps ) {
 
       <div
         className={styles.description}
-        dangerouslySetInnerHTML={{ __html:episode.description }}
+        dangerouslySetInnerHTML={{ __html: episode.description }}
       />
     </div>
-  )
-
-};
+  );
+}
 
 export const getStaticPaths: GetStaticPaths = async () => {
   return {
     paths: [],
     fallback: 'blocking',
-  }
+  };
 };
 
 export const getStaticProps: GetStaticProps = async (ctx) => {
   const { slug } = ctx.params;
 
-  const { data } = await api.get(`/episodes/${slug}`)
+  const { data } = await api.get(`/episodes/${slug}`);
 
   const episode = {
     id: data.id,
@@ -87,11 +84,11 @@ export const getStaticProps: GetStaticProps = async (ctx) => {
     description: data.description,
     url: data.file.url,
   };
-  
+
   return {
     props: {
       episode,
     },
     revalidate: 60 * 60 * 24, // 24 horas
-  }
+  };
 };
