@@ -18,6 +18,7 @@ export function Player() {
     playNext,
     playPrev,
     hasPrevious,
+    isLooping,
     hasNext,
   } = usePlayer();
 
@@ -78,6 +79,7 @@ export function Player() {
         <audio 
           src={episode.url}
           ref={audioRef}
+          loop={isLooping}
           autoPlay
           onPlay={() => setIsPlayingState(true)}
           onPause={() => setIsPlayingState(false)}
