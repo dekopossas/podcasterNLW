@@ -23,7 +23,7 @@ type PlayerContextProviderProps = {
   children: ReactNode;
 }
 
-export function PlayerContextProvider({ children }) {
+export function PlayerContextProvider({ children }: PlayerContextProviderProps) {
   const [episodeList, setEpisodeList] = useState([]);
   const [currentEpisodeIndex, setCurrentEpisodeIndex] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
@@ -44,7 +44,14 @@ export function PlayerContextProvider({ children }) {
 
   return (
     <PlayerContext.Provider
-      value={{ episodeList, currentEpisodeIndex, play, isPlaying, togglePlay, setIsPlayingState }}
+      value={{
+        episodeList,
+        currentEpisodeIndex,
+        play,
+        isPlaying,
+        togglePlay,
+        setIsPlayingState,
+      }}
     >
       {children}
     </PlayerContext.Provider>
