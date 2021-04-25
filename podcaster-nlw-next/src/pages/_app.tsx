@@ -15,7 +15,11 @@ function MyApp({ Component, pageProps }) {
     setEpisodeList([episode]);
     setCurrentEpisodeIndex(0);
     setIsPlaying(true);
-  }
+  };
+
+  function togglePlay() {
+    setIsPlaying(!true);
+  };
 
   return (
     <PlayerContext.Provider value={{
@@ -23,6 +27,7 @@ function MyApp({ Component, pageProps }) {
       currentEpisodeIndex,
       play,
       isPlaying,
+      togglePlay,
     }}>
       <div className={styles.wrapper}>
         <main>
