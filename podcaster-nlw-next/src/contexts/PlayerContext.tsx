@@ -1,4 +1,4 @@
-import { createContext, useState } from 'react';
+import { createContext, useState, ReactNode } from 'react';
 
 type Episode = {
   title: string;
@@ -18,6 +18,10 @@ type PlayerContextData = {
 };
 
 export const PlayerContext = createContext({} as PlayerContextData);
+
+type PlayerContextProviderProps = {
+  children: ReactNode;
+}
 
 export function PlayerContextProvider({ children }) {
   const [episodeList, setEpisodeList] = useState([]);
