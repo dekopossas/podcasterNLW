@@ -24,6 +24,7 @@ export function Player() {
     isShuffling,
     togglePlay,
     toggleLoop,
+    clearPlayerState,
     toggleShuffle,
   } = usePlayer();
 
@@ -43,6 +44,14 @@ export function Player() {
     audioRef.current.addEventListener('timeupdate', () => {
       setProgress(Math.floor(audioRef.current.currentTime));
     })
+  };
+
+  function handleEpisodeEnd () {
+    if (hasNext) {
+      playNext();
+    } else {
+      clearPlayerState();
+    }
   };
 
   function handleSeek (amount: number) {
@@ -100,6 +109,7 @@ export function Player() {
           src={episode.url}
           ref={audioRef}
           loop={isLooping}
+          onEnded={handleEpisodeEnd}
           autoPlay
           onPlay={() => setIsPlayingState(true)}
           onPause={() => setIsPlayingState(false)}
