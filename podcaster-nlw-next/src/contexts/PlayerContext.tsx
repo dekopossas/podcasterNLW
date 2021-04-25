@@ -48,6 +48,15 @@ export function PlayerContextProvider({ children }: PlayerContextProviderProps) 
   function setIsPlayingState(state: boolean) {
     setIsPlaying(state);
   };
+  
+  function playNext() {
+    const nextEp = currentEpisodeIndex + 1
+
+    if (nextEp < episodeList.length) {
+    setCurrentEpisodeIndex(nextEp);
+  };
+
+  }
 
   return (
     <PlayerContext.Provider
