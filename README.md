@@ -2,7 +2,7 @@
 ## Descrição
 Aplicativo de Podcast produzido na quinta edição do Nest Level Week / Rocketseat.
 
-### Conteúdo Trabalhado
+## Conteúdo Trabalhado
 - Fundamento Web
   - <b>refs em React</b>
   - Áudios HTML
@@ -33,8 +33,30 @@ Aplicativo de Podcast produzido na quinta edição do Nest Level Week / Rocketse
   - Loop, Shuffling
   - Slider Control
 
+## Como executar o projeto
+```bash
+#clonar o repositório
+git clone git@github.com:dekopossas/podcasterNLW.git
 
-### Possibilidades de melhorias
+#entrar na pasta
+cd podcaster-nlw-next
+
+#instale as dependências
+npm install
+
+#execute o server API
+npm run server
+
+#execute o hosting no modo DEV
+npm run dev
+```
+### Abra o navegador e se connect no diretorio
+http://localhost:3000
+
+## DIVIRTASSE!
+
+
+## Possibilidades de melhorias
 
 - [ ] Responsivo
 - [ ] Versão PWA
