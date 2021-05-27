@@ -2,6 +2,8 @@
 ## Descrição
 Aplicativo de Podcast produzido na quinta edição do Nest Level Week / Rocketseat.
 
+[vídeo da aplicação](https://www.linkedin.com/feed/update/urn:li:activity:6792212533198548992/)
+
 ## Conteúdo Trabalhado
 - Fundamento Web
   - <b>refs em React</b>
